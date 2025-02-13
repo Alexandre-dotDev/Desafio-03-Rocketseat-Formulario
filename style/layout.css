@@ -8,7 +8,6 @@
   margin-top: 1.25rem;
 
   /* border: 1px solid yellowgreen; */
-
 }
 
 aside {
@@ -47,9 +46,8 @@ aside {
         font: var(--text-logo);
         color: var(--pink);
       }
-      & p{
-
-      letter-spacing: .8px;
+      & p {
+        letter-spacing: 0.8px;
         margin-top: 4px;
       }
     }
@@ -62,8 +60,15 @@ main {
   height: 100vh;
   margin-right: auto;
   border-radius: 12px;
-  
+  background-color: var(--shape-body);
   overflow: auto;
 
-  border: 1px solid orangered;
+  & {
+    overflow-y: scroll;
+    scrollbar-width: thin; /*barra de rolagem fina */
+    scrollbar-color: var(--pink) #000000;
+    
+  }
+  
+  /* border: 1px solid orangered; */
 }
