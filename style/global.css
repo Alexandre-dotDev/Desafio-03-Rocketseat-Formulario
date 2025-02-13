@@ -1,11 +1,11 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-:root{
+:root {
   /* Colors */
-  
+
   /* Brand */
   --brand-light: #59b2ff;
   --brand-mid: #3487cf;
@@ -45,12 +45,22 @@
   --font-family-Baloo2: "Baloo 2", serif;
   --font-family-OpenSans: "Open Sans", serif;
 
-  --text-logo: 400 2.5rem/auto var(--font-family-Leckerli);
-  --heading-md: 600 1.75rem/auto var(--font-family-Baloo2);
-  --heading-sm: 600 1.125rem/auto var(--font-family-Baloo2);
-  --body-md: 500 1rem/auto var(--font-family-OpenSans);
-  --body-sm: 500 0.875rem/auto var(--font-family-OpenSans);
-  --body-md: 500 0.75rem/auto var(--font-family-OpenSans);
-  
+  --text-logo: 400 2.5rem var(--font-family-Leckerli);
+  --heading-md: 600 1.75rem var(--font-family-Baloo2);
+  --heading-sm: 600 1.125rem var(--font-family-Baloo2);
+  --body-md: 500 1rem var(--font-family-OpenSans);
+  --body-sm: 400 0.875rem var(--font-family-OpenSans);
+  --body-md: 500 0.75rem var(--font-family-OpenSans);
+}
 
+body {
+  color: var(--text-body);
+  font: var(--body-md);
+  
+  overflow: hidden;
+  background-color: var(--shape-background);
+}
+img {
+  max-width: 100%;
+  height: auto;
 }
