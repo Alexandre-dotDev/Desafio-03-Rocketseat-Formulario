@@ -31,7 +31,7 @@ aside {
     height: 9rem;
 
     & .title {
-      /* position: relative; */
+      /* position: relative; */     
 
       & .logo-image,
       img {
@@ -58,17 +58,29 @@ main {
   position: relative;
   width: 820px;
   height: 100vh;
-  margin-right: auto;
   border-radius: 12px;
   background-color: var(--shape-body);
   overflow: auto;
 
+  & > * {
+    direction: ltr;
+  }
+
   & {
     overflow-y: scroll;
-    scrollbar-width: thin; /*barra de rolagem fina */
-    scrollbar-color: var(--pink) #000000;
-    
+    scrollbar-width: thin;
+    scrollbar-color: var(--pink) var(--shape-body);
+    direction: rtl;
   }
-  
-  /* border: 1px solid orangered; */
+
+  & .main-container{
+    max-width: 35rem;
+    margin: auto;
+
+    & h2{
+      margin-top: 5rem;
+      font: var(--heading-md);
+      color: var(--text-heading);
+    }
+  }
 }

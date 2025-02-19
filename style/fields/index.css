@@ -1,0 +1,51 @@
+input,
+input [type="datetime-local"],
+textarea {
+  appearance: none;
+  width: 100%;
+  border: 1px solid var(--input-stroke);
+  border-radius: 0.5rem;
+
+  font: var(--body-md);
+  color: var(--input-placeholder);
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid var(--brand-light);
+  outline: 1px solid var(--brand-light);
+}
+
+fieldset {
+  border: none;
+}
+input {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+input[type="datetime-local"] {
+  position: relative;
+  /* color: var(--input-placeholder); */
+  &::-webkit-calendar-picker-indicator {
+    width: 55%;
+    opacity: 0;
+  }
+}
+
+input[type="datetime-local"]:active {
+  border: 1px solid var(--brand-light);
+  outline: 1px solid var(--brand-light);
+}
+
+textarea {
+  height: 8.5rem;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: inline-block;
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+  font: var(--body-sm);
+  color: var(--text-body);
+}
