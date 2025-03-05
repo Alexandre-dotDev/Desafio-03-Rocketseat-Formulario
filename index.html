@@ -31,8 +31,7 @@
           <h2>Crie seu convite</h2>
 
           <form method="post" enctype="multipart/form-data">
-            <fieldset class="section-event">
-              
+            <fieldset class="fieldset-wrapper">
               <div class="icon-calendar">
                 <span>
                   <img src="./assets/icon/Calendar.svg" alt="" />
@@ -41,95 +40,93 @@
               </div>
 
               <div class="input-invite">
-                  <label for="title">Título</label>
-                  <input
-                    type="text"
-                    id="title"
-                    name="title"
-                    placeholder="Nome do evento"
-                  />
+                <label for="title">Título</label>
+                <input
+                  type="text"
+                  id="title"
+                  name="title"
+                  placeholder="Nome do evento"
+                />
               </div>
 
-                <div class="data-invite">
-
-                  <div class="data-wrapper">
-                    <div class="start">
-                      <label for="start">Início</label>
-                      <input type="datetime-local" id="start" name="start" />
-                    </div>
-
-                    <div class="end">
-                      <label for="end">Fim</label>
-                      <input type="datetime-local" id="end" name="end" />
-                    </div>
+              <div class="data-invite">
+                
+                <div class="data-wrapper">
+                  <div class="start">
+                    <label for="start">Início</label>
+                    <input type="datetime-local" id="start" name="start" />
                   </div>
 
-                  <div class="type grid">
+                  <div class="end">
+                    <label for="end">Fim</label>
+                    <input type="datetime-local" id="end" name="end" />
+                  </div>
+                </div>
+              </div>
 
-                    <div class="checkbox">
-                      <label for="type">Tipo</label>
-                      
-                      <div class="btn-wrapper">
-                        <div class="in-person">
-                          <div class="btn-1 grid">
-                            <span></span>
-                            <p>Presencial</p> 
-                          </div>
-                          <input 
-                          type="checkbox" id="in-person"                         
-                          name="in-person" />
-                        </div>
-  
-                        <div class="online">
-                          <div class="btn-2 grid">
-                            <span></span>
-                            <p>Online</p> 
-                          </div>
-                          <input 
-                          type="checkbox" 
-                          id="online" 
-                          name="online" />
-  
-                        </div>
+              <div class="type">
+                <div class="radio">
+                  <label for="type">Tipo</label>
 
+                  <div class="radio-wrapper">
+                    
+                    <div class="in-person">
+                      <div class="radio-text">
+                        <span></span>
+                        <p>Presencial</p>
                       </div>
+
+                      <input type="radio" id="in-person" name="in-person" />
                     </div>
 
-                    <div class="location">
-                      <label for="location">Local</label>
-                      <input type="text" id="location" name="location" placeholder="Link ou endereço"/>
-                    </div>
+                    <div class="online">
+                      <div class="radio-text">
+                        <span></span>
+                        <p>Online</p>
+                      </div>
 
+                      <input type="radio" id="online" name="online" />
+                    </div>
                   </div>
+                </div>
 
+                <div class="location">
+                  <label for="location">Local</label>
+                  <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    placeholder="Link ou endereço"
+                  />
                 </div>
-                <div class="droparea">
-                  <label for="description">Descrição</label>
-                  <textarea
-                    name="description"
-                    id="description"
-                    rows="10"
-                    cols="57"
-                  >Escreva sobre os detalhes do evento
-                  </textarea>
-                </div>
-          </div>
+              </div>
+
+              <div class="droparea">
+                <label for="description">Descrição</label>
+                <textarea
+                  name="description"
+                  id="description"
+                  rows="10"
+                  cols="57"
+                  required
+                >
+Escreva sobre os detalhes do evento</textarea
+                >
+                <span></span>
+              </div>
             </fieldset>
 
             <fieldset class="section-person">
               <h2>Personalização</h2>
               <span></span>
-              
+
               <p>Cor princípal</p>
-              <div class="colors">
-                cores
-              </div>
+              <div class="colors">cores</div>
             </fieldset>
 
             <fieldset class="contact-data">
               <p>Tema do evento</p>
             </fieldset>
-
           </form>
           <footer>footer</footer>
         </div>

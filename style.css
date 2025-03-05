@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: slateblue;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: auto;
+
+  width: 80rem;
+  height: 100vh;
+
+  background-color: violet;
+}
+
+.div-wrapper {
+  position: absolute;
+
+  display: grid;
+  justify-content: center;
+
+  width: 600px;
+  height: 600px;
+  background-color: rgb(23, 26, 26);
+
+}
+.div {
+  width: 100px;
+  height: 100px;
+  border: none;
+}
+
+.div:nth-child(1) {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  background-color: white;
+
+  & div {
+    display: flex;
+    gap: 10px;
+
+    border: 1px solid red;
+
+    & span,
+    p {
+      font-size: 12px;
+    }
+  }
+}
+
+.div:nth-child(2) {
+  position: absolute;
+  right: 0px;
+
+  background-color: rgb(224, 13, 111);
+
+  .top-25 {
+    top: 25px;
+  }
+
+  .bottom-25 {
+    bottom: 25px;
+  }
+
+  fieldset{
+    border: none;
+  }
+
+  & .radio-wrapper {
+    position: absolute;
+    display: flex;
+    width: 100%;
+
+    inset: 0;
+
+    & input,
+    input[type="radio"],
+    fieldset {
+      all: unset;
+    }
+
+    & input,
+    input[type="radio"] {
+      width: 30px;
+      height: 15px;
+      border-radius: 8px;
+    }
+    
+    & input[type="radio"]:checked {
+      border: 2px solid rgb(53, 50, 50);
+    }
+    
+    & .wrapper-input {
+      position: absolute;
+      
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      
+      width: 100%;
+      height: 20px;
+      border-radius: 8px;
+      z-index: 2;
+
+      & label {
+        position: absolute;
+      }
+
+      & input[type="radio"] {
+        width: 100%;
+      }
+
+      & span::after {
+        content: "";
+        position: absolute;
+        left: 15px;
+        top: 50;
+        transform: translateY(-50%);
+
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: black;
+      }
+    }
+    & .wrapper-input:hover {
+      background-color: white;
+    }
+  }
+}
+
+.div:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 300px;
+  height: 150px;
+  background-color: yellow;
+
+  span::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 50%;
+
+    height: 138px;
+
+    border: 1px dashed rgb(112, 207, 199);
+  }
+
+  & form {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+
+    & .field-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto, 1fr);
+      border-top: 1px solid rgb(112, 207, 199);
+      border-bottom: 1px solid rgb(112, 207, 199);
+
+      margin: 5px;
+
+      & legend {
+        padding: 5px;
+      }
+
+      & .input-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+
+        & input[type="checkbox"] {
+          margin-left: auto;
+        }
+
+        & input[type="radio"] {
+          margin-left: auto;
+        }
+      }
+      label {
+        padding-left: 5px;
+      }
+
+      input[type="checkbox"] {
+        all: unset;
+      }
+
+      input[type="checkbox"] {
+        display: grid;
+        width: 25px;
+        height: 15px;
+        margin: 5px;
+        border: 2px solid transparent;
+        outline: 1px solid gray;
+        background-color: white;
+      }
+
+      input[type="radio"] {
+        display: grid;
+        width: 25px;
+        height: 15px;
+        margin: 5px;
+      }
+
+      input[type="checkbox"]:focus {
+        outline: 1px solid blue;
+        border: 2px solid white;
+        background-color: blue;
+      }
+    }
+  }
+}
+
+.div:nth-child(4) {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  background-color: rgb(218, 90, 16);
+
+  width: 300px;
+  height: 400px;
+
+  form,
+  fieldset,
+  textarea,
+  input {
+    all: unset;
+  }
+
+  form {
+    position: relative;
+    border: none;
+    outline: none;
+    box-shadow: 0, 0, 0;
+
+    & fieldset {
+      display: grid;
+      justify-content: center;
+      border: none;
+
+      & label {
+        padding: 10px;
+      }
+      & textarea:focus,
+      input:focus {
+        box-shadow: 0, 0, 0;
+        border: none;
+        outline: none;
+      }
+
+      & textarea {
+        padding: 10px;
+        border: 1px solid rgb(250, 252, 252);
+        color: rgb(28, 32, 32);
+
+        &::placeholder{
+          color: rgb(250, 252, 252);
+        }
+      }
+    }
+  }
+}

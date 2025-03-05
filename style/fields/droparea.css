@@ -1,0 +1,7 @@
+.droparea {
+  position: relative;
+
+  & textarea {
+    padding: 1rem;
+  }
+}

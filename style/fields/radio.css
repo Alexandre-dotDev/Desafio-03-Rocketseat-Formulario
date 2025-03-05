@@ -1,0 +1,85 @@
+@import url(type.css);
+
+.radio {
+  position: absolute;
+  display: flex;
+  width: 17rem;
+  height: 4.9rem;
+
+  & .radio-wrapper {
+    position: absolute;
+    display: flex;
+    align-items: end;
+    width: 100%;
+    height: 4.9rem;
+    bottom: 0;
+    gap: 1rem;
+
+    & #in-person,
+    .in-person {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      width: 8.1rem;
+      height: 3rem;
+
+      & .radio-text {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        width: 100%;
+
+        & span {
+          background: url(../../assets/icon/Building-2.svg) center/contain;
+          width: 1rem;
+          height: 1rem;
+        }
+
+        & p {
+          font: var(--text-heading);
+        }
+      }
+    }
+
+    & #online,
+    .online {
+      position: absolute;
+      right: 0;
+      display: flex;
+      align-items: center;
+      width: 8.1rem;
+      height: 3rem;
+
+      & .radio-text {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        width: 100%;
+
+        & span {
+          background: url(../../assets/icon/Video.svg) center/contain no-repeat;
+          width: 1rem;
+          height: 1rem;
+        }
+
+        & p {
+          font: var(--text-heading);
+        }
+      }
+    }
+  }
+}
+
+/* label + .radio-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8.4rem, 1fr));
+} */
+/* 
+.radio-inner {
+  & input,
+  & input[type="radio"]:focus {
+    all: unset;
+  }
+} */

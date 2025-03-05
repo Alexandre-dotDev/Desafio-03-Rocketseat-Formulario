@@ -2,12 +2,13 @@
   position: relative;
   display: grid;
   grid-template-columns: 33% 67%;
+  justify-content: center;
 
   gap: 1.25rem;
 
   height: 100vh;
 
-  overflow: hidden;
+  /* overflow: hidden; */
   margin-top: 1.25rem;
 }
 
@@ -27,12 +28,12 @@ aside {
     top: 32px;
     left: 32px;
     display: grid;
-    flex-direction: column;
+    /* flex-direction: column; */
     width: 21rem;
     height: 9rem;
 
     & .title {
-      /* position: relative; */     
+      /* position: relative; */
 
       & .logo-image,
       img {
@@ -57,6 +58,8 @@ aside {
 
 main {
   position: relative;
+  display: flex;
+  justify-content: center;
   width: 820px;
   height: 100vh;
   border-radius: 12px;
@@ -74,14 +77,19 @@ main {
     direction: rtl;
   }
 
-  & .main-container{
-    max-width: 35rem;
-    margin: auto;
+  & .main-container {
+    position: absolute;
+    display: grid;
+    
+    width: 35rem;
+    margin: 24px auto;
 
-    & h2{
+    & h2 {
       margin-top: 5rem;
       font: var(--heading-md);
       color: var(--text-heading);
     }
+
   }
+
 }
