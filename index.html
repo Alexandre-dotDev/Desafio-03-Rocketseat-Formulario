@@ -31,78 +31,87 @@
           <h2>Crie seu convite</h2>
 
           <form method="post" enctype="multipart/form-data">
-            <fieldset class="fieldset-wrapper">
-              <div class="icon-calendar">
-                <span>
-                  <img src="./assets/icon/Calendar.svg" alt="" />
-                </span>
-                <p>Sobre o evento</p>
-              </div>
-
-              <div class="input-invite">
-                <label for="title">Título</label>
-                <input
-                  type="text"
-                  id="title"
-                  name="title"
-                  placeholder="Nome do evento"
-                />
-              </div>
-
-              <div class="data-invite">
-                
-                <div class="data-wrapper">
-                  <div class="start">
-                    <label for="start">Início</label>
-                    <input type="datetime-local" id="start" name="start" />
-                  </div>
-
-                  <div class="end">
-                    <label for="end">Fim</label>
-                    <input type="datetime-local" id="end" name="end" />
-                  </div>
+            <fieldset class="section-event">
+              <div class="heading">
+                <div class="icon-calendar">
+                  <span>
+                    <img
+                      src="./assets/icon/Calendar.svg"
+                      alt="Icone de calendário"
+                    />
+                  </span>
+                  <span class="aboult">Sobre o evento</span>
                 </div>
               </div>
 
-              <div class="type">
-                <div class="radio">
-                  <label for="type">Tipo</label>
+              <label for="title">Título</label>
+              <input
+                class="input-title"
+                type="text"
+                id="title"
+                name="title"
+                placeholder="Nome do evento"
+              />
+            </fieldset>
 
-                  <div class="radio-wrapper">
-                    
-                    <div class="in-person">
-                      <div class="radio-text">
-                        <span></span>
-                        <p>Presencial</p>
-                      </div>
+            <fieldset>
+              <div class="labels">
+                <label for="start">Início</label>
+                <label for="end">Fim</label>
+              </div>
+              <div class="date-invite">
+                <div class="start">
+                  <span></span>
+                  <input type="datetime-local" id="start" hidden />
+                </div>
 
-                      <input type="radio" id="in-person" name="in-person" />
-                    </div>
+                <div class="end">
+                  <input type="datetime-local" id="end" />
+                </div>
+              </div>
+            </fieldset>
 
-                    <div class="online">
-                      <div class="radio-text">
-                        <span></span>
-                        <p>Online</p>
-                      </div>
+            <fieldset>
+              <div class="labels">
+                <label class="lb-type" for="test-3">Tipo</label>
+                <label class="lb-local" for="location">Local</label>
+              </div>
+              <div class="info-location">
+                <div class="segmented-control">
+                  <div class="box">
+                    <input
+                      type="radio"
+                      id="test-3"
+                      name="radio"
+                      class="input-1 hover"
+                    />
 
-                      <input type="radio" id="online" name="online" />
-                    </div>
+                    <input
+                      type="radio"
+                      id="test-4"
+                      name="radio"
+                      class="input-2 hover"
+                    />
                   </div>
                 </div>
 
-                <div class="location">
-                  <label for="location">Local</label>
-                  <input
-                    type="text"
-                    id="location"
-                    name="location"
-                    placeholder="Link ou endereço"
-                  />
+                <div class="text-input">
+                  <div class="text">
+                    <input
+                      class="input-local"
+                      type="text"
+                      id="location"
+                      name="location"
+                      placeholder="Link ou endereço"
+                    />
+                  </div>
                 </div>
               </div>
+            </fieldset>
 
+            <fieldset>
+              <label for="description">Descrição</label>
               <div class="droparea">
-                <label for="description">Descrição</label>
                 <textarea
                   name="description"
                   id="description"
@@ -117,8 +126,31 @@ Escreva sobre os detalhes do evento</textarea
             </fieldset>
 
             <fieldset class="section-person">
-              <h2>Personalização</h2>
-              <span></span>
+              <div class="heading">
+                <div class="icon-calendar">
+                  <span>
+                    <img
+                      src="./assets/icon/Paintbrush-vertical.svg"
+                      alt="Icone de calendário"
+                    />
+                  </span>
+                  <span class="aboult">Personalização</span>
+                </div>
+              </div>
+              <label >Cor principal</label>
+              <div class="item-circles">
+                <input class="check-color" type="radio" name="circle" />
+                <input class="check-color" type="radio" name="circle" />
+                <input class="check-color" type="radio" name="circle" />
+                <input class="check-color" type="radio" name="circle" />
+                <input class="check-color" type="radio" name="circle" />
+                <input class="check-color" type="radio" name="circle" />
+                <input class="check-color" type="radio" name="circle" />
+                <input class="check-color" type="radio" name="circle" />
+                <input class="check-color" type="radio" name="circle" />
+                <input class="check-color" type="radio" name="circle" />
+                <input class="check-color" type="radio" name="circle" />
+              </div>
 
               <p>Cor princípal</p>
               <div class="colors">cores</div>

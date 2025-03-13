@@ -8,13 +8,16 @@
   </head>
   <body>
     <div class="main-container">
-    
       <div class="div-wrapper">
-       
         <div class="div">
-          <div>
-            <span>50</span>
-            <p>Qualquer coisa</p>
+          <div class="radio">
+            <input class="rd" type="radio" id="rd-1" name="radio" checked />
+            <label for="rd-1"> Radio 1</label>
+          </div>
+
+          <div class="radio">
+            <input class="rd" type="radio" name="radio" id="rd-2" />
+            <label for="rd-2"> Radio 2</label>
           </div>
         </div>
 
@@ -91,9 +94,33 @@
           </form>
         </div>
 
-      </div>
+        <div class="div">
+          <label for="test-1">
+            <input
+              type="checkbox"
+              data="Presencial"
+              id="test-1"
+              class="btn-1"
+            />
+            Teste 1
+          </label>
 
+          <label for="test-2">
+            <input type="checkbox" id="test-2" class="btn-2" />
+            Teste 2
+          </label>
+
+          <label for="test-3" class="label-test"
+            ><span class="span-1"></span>Solution
+            <input type="radio" id="test-3" name="radio" class="input-1" />
+          </label>
+
+          <label for="test-4" class="label-test"
+            ><span class="span-2"></span>Online
+            <input type="radio" id="test-4" name="radio" class="input-2" />
+          </label>
+        </div>
+      </div>
     </div>
-    
   </body>
 </html>

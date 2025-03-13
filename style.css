@@ -6,6 +6,7 @@
 
 body {
   background-color: slateblue;
+  overflow: hidden;
 }
 
 .main-container {
@@ -29,8 +30,7 @@ body {
 
   width: 600px;
   height: 600px;
-  background-color: rgb(23, 26, 26);
-
+  background-color: rgb(55, 24, 141);
 }
 .div {
   width: 100px;
@@ -42,22 +42,70 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
-
-  display: grid;
-  justify-content: center;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+
+  gap: 40px;
 
   background-color: white;
 
-  & div {
+  & .radio {
     display: flex;
+    align-items: center;
     gap: 10px;
+    cursor: pointer;
 
-    border: 1px solid red;
+    & .rd {
+      position: relative;
+      appearance: none;
 
-    & span,
-    p {
-      font-size: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 40px;
+      height: 40px;
+
+      cursor: pointer;
+
+      border-radius: 50%;
+
+      outline: none;
+      border: 3px solid turquoise;
+
+      &::before {
+        content: "";
+        position: absolute;
+
+        width: 20px;
+        height: 20px;
+
+        border-radius: 50%;
+        background-color: turquoise;
+
+        opacity: 0;
+
+        transition: all 600ms ease-in-out;
+      }
+
+      &:checked::before {
+        opacity: 1;
+      }
+
+      &:focus {
+        box-shadow: 0 0 5px turquoise;
+      }
+    }
+
+    & label {
+      cursor: pointer;
+      color: turquoise;
+      text-transform: uppercase;
+      font-weight: 700;
     }
   }
 }
@@ -76,7 +124,7 @@ body {
     bottom: 25px;
   }
 
-  fieldset{
+  fieldset {
     border: none;
   }
 
@@ -99,18 +147,18 @@ body {
       height: 15px;
       border-radius: 8px;
     }
-    
+
     & input[type="radio"]:checked {
       border: 2px solid rgb(53, 50, 50);
     }
-    
+
     & .wrapper-input {
       position: absolute;
-      
+
       display: flex;
       align-items: center;
       justify-content: space-around;
-      
+
       width: 100%;
       height: 20px;
       border-radius: 8px;
@@ -275,10 +323,122 @@ body {
         border: 1px solid rgb(250, 252, 252);
         color: rgb(28, 32, 32);
 
-        &::placeholder{
+        &::placeholder {
           color: rgb(250, 252, 252);
         }
       }
+    }
+  }
+}
+
+.div:nth-child(5) {
+  position: absolute;
+  right: 0;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  height: 300px;
+
+  background-color: black;
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    color: gray;
+    margin-left: 1rem;
+
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+
+    & input {
+      position: relative;
+      appearance: none;
+
+      display: flex;
+      align-items: center;
+
+      width: 80px;
+      height: 40px;
+
+      margin: 10px;
+      border: 1px solid gray;
+      border-radius: 10px;
+      outline: none;
+
+      cursor: pointer;
+    }
+
+    .btn-1::before {
+      content: url(./assets/icon/Building-2.svg);
+      position: absolute;
+
+      left: 0.5rem;
+    }
+    .btn-1:checked::before {
+      content: url(./assets/icon/Building-2-hover.svg);
+    }
+
+    .btn-2::before {
+      content: url(./assets/icon/Video.svg);
+      position: absolute;
+
+      left: 0.5rem;
+    }
+
+    .btn-2:checked::before {
+      content: url(./assets/icon/Video-hover.svg);
+    }
+  }
+
+    .label-test {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 140px;
+    height: 40px;
+    border: none;
+    margin: .5rem 1rem;
+
+    & .input-1, .input-2 {
+      position: absolute;
+      width: 120px;
+      background-color: transparent;
+    }
+
+    & .span-1 ~ .input-1::before {
+      content: url(./assets/icon/Building-2.svg);
+      position: absolute;
+
+      left: 0;
+      padding-left: 1rem;
+    }
+
+    & .input-1:checked::before {
+      content: url(./assets/icon/Building-2-hover.svg);
+      position: absolute;
+
+      left: 0;
+      padding-left: 1rem;      
+    }
+
+    & .span-2 ~ .input-2::before {
+      content: url(./assets/icon/Video.svg);
+      position: absolute;
+
+      left: 0;
+      padding-left: 1rem;      
+    }    
+
+    &  .span-2 ~ .input-2:checked::before {
+      content: url(./assets/icon/Video-hover.svg);
+      position: absolute;
+      left: 0;
+      padding-left: 1rem;      
     }
   }
 }

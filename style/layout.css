@@ -1,3 +1,5 @@
+@import url(forms.css);
+
 #app {
   position: relative;
   display: grid;
@@ -28,7 +30,7 @@ aside {
     top: 32px;
     left: 32px;
     display: grid;
-    /* flex-direction: column; */
+
     width: 21rem;
     height: 9rem;
 
@@ -76,20 +78,4 @@ main {
     scrollbar-color: var(--pink) var(--shape-body);
     direction: rtl;
   }
-
-  & .main-container {
-    position: absolute;
-    display: grid;
-    
-    width: 35rem;
-    margin: 24px auto;
-
-    & h2 {
-      margin-top: 5rem;
-      font: var(--heading-md);
-      color: var(--text-heading);
-    }
-
-  }
-
 }
