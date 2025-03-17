@@ -10,7 +10,6 @@
 
   height: 100vh;
 
-  /* overflow: hidden; */
   margin-top: 1.25rem;
 }
 
@@ -75,7 +74,9 @@ main {
   & {
     overflow-y: scroll;
     scrollbar-width: thin;
-    scrollbar-color: var(--pink) var(--shape-body);
+    scrollbar-color: var(--pink) transparent;
+    scrollbar-arrow-color: antiquewhite;
     direction: rtl;
+    
   }
 }

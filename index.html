@@ -27,7 +27,7 @@
       </aside>
 
       <main>
-        <div class="main-container flex">
+        <div class="main-container">
           <h2>Crie seu convite</h2>
 
           <form method="post" enctype="multipart/form-data">
@@ -214,10 +214,32 @@ Escreva sobre os detalhes do evento</textarea
                   <p>Outors</p>
                 </div>
               </div>
+              <div class="update-video">
+                <div class="style">
+                  <label for="style">Estilo</label>
+                  <div class="toogle-wrapper">
+                    <input
+                      type="checkbox"
+                      name="toogle"
+                      id="style"
+                      class="toogle"
+                    />
+                    <span class="totality"></span>
+                  </div>
+                </div>
+
+                <div class="upadete">
+                  <label for="photo">Foto de capa</label>
+                  <div class="input-wrapper-button">
+                    <input class="photo" type="file" name="file" id="photo" />
+                  </div>
+                  <span class="error"></span>
+                </div>
+              </div>
             </fieldset>
 
             <fieldset class="contact-data">
-              Contato
+              <label for="">Contato</label>
             </fieldset>
           </form>
           <footer>footer</footer>

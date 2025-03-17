@@ -221,8 +221,10 @@ fieldset {
     border-radius: 50%;
     appearance: none;
     outline: none;
+    cursor: pointer;
 
-    &:checked {
+    &:checked,
+    &:focus {
       border: 8px solid var(--shape-button);
       outline: 2px solid var(--brand-light);
     }
@@ -308,7 +310,10 @@ fieldset {
       border: 2px solid var(--input-stroke);
 
       z-index: 10;
-      &:checked {
+      cursor: pointer;
+
+      &:checked,
+      &:focus {
         border: 2px solid var(--brand-light);
       }
     }
@@ -364,6 +369,146 @@ fieldset {
 
       bottom: 0;
       margin: 0px 4px 8px 4px;
+    }
+  }
+}
+
+.update-video {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+  margin-top: 1rem;
+
+  width: 100%;
+
+  & .style {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    & .toogle-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+
+      margin-top: 0.35rem;
+
+      width: 100%;
+
+      & .toogle {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 4rem;
+        height: 2rem;
+        border: 2px solid var(--input-stroke);
+        border-radius: 999px;
+
+        &::before {
+          content: "";
+          width: 1.5rem;
+          height: 1.5rem;
+          border-radius: 50%;
+          background-color: var(--input-stroke);
+          transform: translateX(0.25rem);
+          transition: all 600ms ease-out;
+        }
+
+        &:checked:before {
+          content: "";
+          width: 1.5rem;
+          height: 1.5rem;
+          border-radius: 50%;
+          background-color: var(--text-heading);
+          transform: translateX(2.1rem);
+          transition: all 600ms ease-out;
+        }
+
+        &:checked {
+          background-color: var(--brand-light);
+          transition: all 600ms ease-out;
+        }
+      }
+
+      & .totality::before {
+        content: "Escuro";
+        font: var(--body-sm);
+        color: var(--text-heading);
+      }
+
+      & .toogle:checked ~ .totality::before {
+        content: "Claro";
+      }
+    }
+  }
+
+  & label {
+    cursor: pointer;
+  }
+
+  & .upadete {
+    position: relative;
+    width: 100%;
+
+    
+    & .input-wrapper-button {
+      display: flex;
+      align-items: center;
+      
+      width: 7.5rem;
+      height: 3rem;
+      
+      background-color: var(--shape-button);
+      border-radius: 0.5rem;      
+      
+      & input {
+        position: absolute;
+        display: flex;
+        gap: 1rem;
+        background: none;
+        border: none;
+
+        user-select: none;
+
+        &::-webkit-file-upload-button {
+          position: relative;
+
+          width: 7.5rem;
+          height: 3rem;
+          background-color: transparent;
+          border: none;
+          border-radius: 0.5rem;
+          color: transparent;
+
+          margin-right: 1rem;
+
+          user-select: none;
+          z-index: 2;
+        }
+      }
+
+      &::before{
+        content: url(../assets/icon/Upload.svg);
+
+        position: absolute;
+        left: .75rem;
+      }
+
+      &::after {
+        content: "Selecionar";
+        position: absolute;
+        left: 2.25rem;
+
+        width: 24px;
+        height: 24px;
+        
+        font: var(--body-sm);
+        color: var(--text-heading);
+      }
     }
   }
 }
