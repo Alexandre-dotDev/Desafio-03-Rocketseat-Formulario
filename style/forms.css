@@ -8,6 +8,7 @@ form {
 fieldset {
   display: grid;
   border: none;
+  width: 100%;
 }
 
 .main-container {
@@ -31,15 +32,41 @@ fieldset {
   gap: 1rem;
 }
 
+.error {
+  position: relative;
+  top: 0.25rem;
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  user-select: none;
+
+  &::before {
+    content: url(../assets/icon/Circle-alert.svg);
+    position: relative;
+    transform: translateY(2px);
+  }
+
+  &::after {
+    content: "Error message";
+    position: relative;
+    top: 0;
+    left: 0.25rem;
+    font: var(--body-md);
+    color: var(--danger);
+  }
+}
+
 .heading {
   position: relative;
   display: grid;
   align-items: center;
 
-  & .icon-calendar {
+  & .icon-heading {
     position: relative;
-    height: 3rem;
-    margin-top: 3rem;
+    margin: 3rem 0;
+
     & span {
       position: absolute;
     }
@@ -48,57 +75,68 @@ fieldset {
       margin-left: 3rem;
       font: var(--heading-sm);
       color: var(--text-heading);
-      margin-bottom: 26px;
     }
   }
 }
-
-.input-title {
+.input-title-wrapper {
   position: relative;
-  width: 100%;
-  padding-left: 1rem;
-  color: var(--text-heading);
-
-  &::placeholder {
-    font: var(--body-md);
-    color: var(--input-placeholder);
-  }
-}
-
-.date-invite {
-  position: relative;
-
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
   width: 100%;
   height: 3rem;
 
-  & .start {
+  & .input-title {
     position: relative;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    padding-left: 1rem;
+    color: var(--text-heading);
 
-    & input {
-      position: absolute;
-      bottom: 0;
-      text-transform: uppercase;
-      padding-left: 1rem;
+    &::placeholder {
+      font: var(--body-md);
+      color: var(--input-placeholder);
     }
   }
+}
 
-  & .end {
+.invite-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  & .date-invite {
     position: relative;
 
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
 
-    & input {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      text-transform: uppercase;
-      padding-left: 1rem;
+    width: 100%;
+
+    & .start {
+      position: relative;
+
+      & input {
+        position: relative;
+        bottom: 0;
+        height: 3rem;
+        text-transform: uppercase;
+        padding-left: 1rem;
+      }
+      
+    }
+    border: 1px solid red;
+
+    & .end {
+      position: relative;
+
+      & input {
+        position: relative;
+        right: 0;
+        bottom: 0;
+        height: 3rem;
+        text-transform: uppercase;
+        padding-left: 1rem;
+      }
     }
   }
 }
@@ -187,13 +225,18 @@ fieldset {
   & .text-input {
     position: relative;
 
-    & .input-local {
-      position: absolute;
-      padding-left: 1rem;
+    & .text {
+      position: relative;
+      height: 3rem;
 
-      &::placeholder {
-        font: var(--body-md);
-        color: var(--imput-placeholder);
+      & .input-local {
+        position: relative;
+        padding-left: 1rem;
+
+        &::placeholder {
+          font: var(--body-md);
+          color: var(--imput-placeholder);
+        }
       }
     }
   }
@@ -206,6 +249,10 @@ fieldset {
 
   & textarea {
     padding: 0.5rem 1rem;
+
+    &::placeholder {
+      color: var(--input-placeholder);
+    }
   }
 }
 
@@ -274,8 +321,6 @@ fieldset {
       border: 8px solid var(--shape-button);
     }
   }
-
-  /* border: 1px solid yellow; */
 }
 
 .event-theme {
@@ -398,7 +443,6 @@ fieldset {
       margin-top: 0.35rem;
 
       width: 100%;
-
       & .toogle {
         position: relative;
         display: flex;
@@ -454,17 +498,16 @@ fieldset {
     position: relative;
     width: 100%;
 
-    
     & .input-wrapper-button {
       display: flex;
       align-items: center;
-      
+
       width: 7.5rem;
       height: 3rem;
-      
+
       background-color: var(--shape-button);
-      border-radius: 0.5rem;      
-      
+      border-radius: 0.5rem;
+
       & input {
         position: absolute;
         display: flex;
@@ -491,11 +534,11 @@ fieldset {
         }
       }
 
-      &::before{
+      &::before {
         content: url(../assets/icon/Upload.svg);
 
         position: absolute;
-        left: .75rem;
+        left: 0.75rem;
       }
 
       &::after {
@@ -505,9 +548,186 @@ fieldset {
 
         width: 24px;
         height: 24px;
-        
+
         font: var(--body-sm);
         color: var(--text-heading);
+      }
+
+      & .error {
+        position: absolute;
+        bottom: -140px;
+      }
+    }
+  }
+}
+
+.contact {
+  position: relative;
+
+  width: 100%;
+
+  & .input-name-wrapper {
+    position: relative;
+    width: 100%;
+    
+    & .contact-name-wrapper{
+      position: relative;
+      width: 100%;
+
+      & .input-name {
+        /* position: relative; */
+        width: 100%;
+        padding-left: 1rem;
+  
+        &::placeholder {
+          color: var(--input-placeholder);
+        }
+      }
+    }    
+  }
+
+  & .contact-data-wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    width: 100%;
+
+    & .email {
+      position: relative;
+      width: 100%;
+
+      & .input-email {
+        width: 100%;
+        padding-left: 1rem;
+
+        &::placeholder {
+          color: var(--input-placeholder);
+        }
+      }
+    }
+
+    & .phone {
+      position: relative;
+      width: 100%;
+
+      & .input-fone {
+        width: 100%;
+        padding-left: 1rem;
+
+        &::placeholder {
+          color: var(--input-placeholder);
+        }
+      }
+    }
+  }
+
+  & .bottom-border {
+    position: relative;
+    width: 100%;
+
+    margin-top: 3rem;
+    border-bottom: 1px solid var(--input-stroke);
+  }
+}
+
+.footer {
+  position: relative;
+  display: flex;
+
+  width: 100%;
+
+  & .terms-and-policies {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+    padding: 2.5rem 0;
+
+    & .check-point {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+
+      width: 100%;
+      height: 2.25rem;
+      padding: 0;
+      margin: 0;
+
+      & input {
+        all: unset;
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        width: 1.25rem;
+        height: 1.25rem;
+        border-radius: 0.25rem;
+        border: 1px solid var(--input-stroke);
+
+        &:checked::before {
+          content: "";
+          position: absolute;
+          width: 0.35rem;
+          height: 0.65rem;
+          bottom: 6px;
+          border-bottom: 2px solid var(--brand-light);
+          border-right: 2px solid var(--brand-light);
+
+          transform: rotate(45deg);
+        }
+
+        &:checked {
+          border: 1px solid var(--brand-light);
+        }
+      }
+
+      label {
+        & strong {
+          color: var(--brand-light);
+        }
+      }
+    }
+  }
+
+  & .btn-wrapper {
+    position: relative;
+    width: 100%;
+    height: 5rem;
+
+    & button {
+      all: unset;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-top: 3rem;
+    }
+
+    & .btn-submit {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+
+      width: 11rem;
+      height: 3rem;
+      background: var(--brand-dark);
+      border-radius: 0.5rem;
+      font: var(--body-md);
+      color: var(--text-heading);
+
+      user-select: none;
+      cursor: pointer;
+
+      & .icon-submit {
+        position: absolute;
+
+        left: 1.25rem;
       }
     }
   }

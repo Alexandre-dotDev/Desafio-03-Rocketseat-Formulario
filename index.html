@@ -33,7 +33,7 @@
           <form method="post" enctype="multipart/form-data">
             <fieldset class="section-event">
               <div class="heading">
-                <div class="icon-calendar">
+                <div class="icon-heading">
                   <span>
                     <img
                       src="./assets/icon/Calendar.svg"
@@ -44,34 +44,45 @@
                 </div>
               </div>
 
-              <label for="title">Título</label>
-              <input
-                class="input-title"
-                type="text"
-                id="title"
-                name="title"
-                placeholder="Nome do evento"
-              />
-            </fieldset>
-
-            <fieldset>
               <div class="labels">
-                <label for="start">Início</label>
-                <label for="end">Fim</label>
+                <label for="title">Título</label>
               </div>
-              <div class="date-invite">
-                <div class="start">
-                  <span></span>
-                  <input type="datetime-local" id="start" hidden />
+
+              <div class="input-title-wrapper">
+                <input
+                  class="input-title"
+                  type="text"
+                  id="title"
+                  name="title"
+                  placeholder="Nome do evento"
+                  required
+                />
+                <div class="error"></div>
+              </div>
+            </fieldset>
+
+            <fieldset class="section-invite">
+              <div class="invite-wrapper">
+                <div class="labels">
+                  <label for="start">Início</label>
+                  <label for="end">Fim</label>
                 </div>
 
-                <div class="end">
-                  <input type="datetime-local" id="end" />
+                <div class="date-invite">
+                  <div class="start">
+                    <input type="datetime-local" id="start" required />
+                    <div class="error"></div>
+                  </div>
+
+                  <div class="end">
+                    <input type="datetime-local" id="end" required />
+                    <div class="error"></div>
+                  </div>
                 </div>
               </div>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="section-location">
               <div class="labels">
                 <label class="lb-type" for="test-3">Tipo</label>
                 <label class="lb-local" for="location">Local</label>
@@ -84,6 +95,7 @@
                       id="test-3"
                       name="radio"
                       class="input-1 hover"
+                      checked
                     />
 
                     <input
@@ -103,31 +115,34 @@
                       id="location"
                       name="location"
                       placeholder="Link ou endereço"
+                      required
                     />
+                    <div class="error"></div>
                   </div>
                 </div>
               </div>
             </fieldset>
 
-            <fieldset>
-              <label for="description">Descrição</label>
+            <fieldset class="section-descriptiom">
+              <div class="labels">
+                <label for="description">Descrição</label>
+              </div>
               <div class="droparea">
                 <textarea
                   name="description"
                   id="description"
                   rows="10"
                   cols="57"
+                  placeholder="Escreva sobre os detalhes do evento"
                   required
-                >
-Escreva sobre os detalhes do evento</textarea
-                >
-                <span></span>
+                ></textarea>
+                <div class="error"></div>
               </div>
             </fieldset>
 
             <fieldset class="section-person">
               <div class="heading">
-                <div class="icon-calendar">
+                <div class="icon-heading">
                   <span>
                     <img
                       src="./assets/icon/Paintbrush-vertical.svg"
@@ -137,7 +152,9 @@ Escreva sobre os detalhes do evento</textarea
                   <span class="aboult">Personalização</span>
                 </div>
               </div>
-              <label>Cor principal</label>
+              <div class="labels">
+                <label>Cor principal</label>
+              </div>
               <div class="item-circles">
                 <input class="check-color" type="radio" name="circle" />
                 <input class="check-color" type="radio" name="circle" />
@@ -151,7 +168,9 @@ Escreva sobre os detalhes do evento</textarea
                 <input class="check-color" type="radio" name="circle" />
                 <input class="check-color" type="radio" name="circle" />
               </div>
-              <label>Tema do evento</label>
+              <div class="labels">
+                <label>Tema do evento</label>
+              </div>
               <div class="event-theme">
                 <div class="card">
                   <input class="input-card" type="radio" name="card" />
@@ -230,19 +249,128 @@ Escreva sobre os detalhes do evento</textarea
 
                 <div class="upadete">
                   <label for="photo">Foto de capa</label>
+
                   <div class="input-wrapper-button">
-                    <input class="photo" type="file" name="file" id="photo" />
+                    <input
+                      class="photo"
+                      type="file"
+                      name="file"
+                      id="photo"
+                      required
+                    />
+                    <div class="error"></div>
                   </div>
-                  <span class="error"></span>
                 </div>
               </div>
             </fieldset>
 
             <fieldset class="contact-data">
-              <label for="">Contato</label>
+              <div class="contact">
+                <div class="heading">
+                  <div class="icon-heading">
+                    <span>
+                      <img
+                        src="./assets/icon/Contact.svg"
+                        alt="Icone de calendário"
+                      />
+                    </span>
+                    <span class="aboult">Dados para contato</span>
+                  </div>
+                </div>
+                <div class="input-name-wrapper">
+                  <div class="labels">
+                    <label for="name">Nome</label>
+                  </div>
+                  <div class="contact-name-wrapper">
+                    <input
+                      type="text"
+                      id="name"
+                      placeholder="Nome completo"
+                      class="input-name"
+                      required
+                    />
+                    <div class="error"></div>
+                  </div>
+                </div>
+
+                <div class="labels">
+                  <label for="email">E-mail</label>
+                  <label for="phone">Telefone</label>
+                </div>
+
+                <div class="contact-data-wrapper">
+                  <div class="email">
+                    <input
+                      type="email"
+                      id="email"
+                      placeholder="exemplo@email.com"
+                      class="input-email"
+                      required
+                    />
+                    <div class="error"></div>
+                  </div>
+
+                  <div class="phone">
+                    <input
+                      type="tel"
+                      id="phone"
+                      placeholder="(99) 99999-9999"
+                      class="input-fone"
+                      required
+                    />
+                    <div class="error"></div>
+                  </div>
+                </div>
+                <div class="bottom-border"></div>
+              </div>
+            </fieldset>
+
+            <fieldset class="footer">
+              <div class="terms-and-policies">
+                <div class="check-point">
+                  <input type="checkbox" name="terms" id="terms" checked />
+                  <label for="terms"
+                    >Li e concordo com os <strong>Termos e Condições</strong> e
+                    com a <strong>Política de Privacidade</strong></label
+                  >
+                </div>
+
+                <div class="check-point">
+                  <input
+                    type="checkbox"
+                    name="accepter-email"
+                    id="accepter-email"
+                  />
+                  <label for="accepter-email"
+                    >Aceito receber atualizações e promoções por e-mail</label
+                  >
+                </div>
+
+                <div class="check-point">
+                  <input
+                    type="checkbox"
+                    name="accepted-updates"
+                    id="accepted-updates"
+                  />
+                  <label for="accepted-updates"
+                    >Aceito receber atualizações e promoções por SMS</label
+                  >
+                </div>
+                <div class="btn-wrapper">
+                  <button type="submit" class="btn-submit">
+                    <img src="./assets/icon/Ticket.svg" alt="" />
+                    Gerar convite
+                  </button>
+                </div>
+              </div>
             </fieldset>
           </form>
-          <footer>footer</footer>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
         </div>
       </main>
     </div>

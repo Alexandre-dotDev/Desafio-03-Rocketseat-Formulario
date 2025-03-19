@@ -2,8 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  appearance: none
-
+  appearance: none;
 }
 :root {
   /* Colors */
@@ -37,7 +36,7 @@
   --shape-body: #212427;
   --shape-button: #2d3136;
   --shape-hover: #383d42;
-  
+
   /* Text */
   --text-body: #c8cdd0;
   --text-heading: #f9f9f9;
@@ -53,6 +52,7 @@
   --body-md: 500 1rem var(--font-family-OpenSans);
   --body-sm: 400 0.875rem var(--font-family-OpenSans);
   --body-md: 500 0.75rem var(--font-family-OpenSans);
+  --body-xsm: 500 0.625rem var(--font-family-OpenSans);
 }
 
 body {
@@ -60,7 +60,7 @@ body {
   justify-content: center;
   color: var(--text-body);
   font: var(--body-md);
-  
+
   overflow: hidden;
   background-color: var(--shape-background);
 }
