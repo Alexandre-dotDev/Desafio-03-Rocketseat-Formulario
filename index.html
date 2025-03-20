@@ -48,7 +48,7 @@
                 <label for="title">Título</label>
               </div>
 
-              <div class="input-title-wrapper">
+              <div class="input-title-wrapper" data-error="Error message">
                 <input
                   class="input-title"
                   type="text"
@@ -57,7 +57,6 @@
                   placeholder="Nome do evento"
                   required
                 />
-                <div class="error"></div>
               </div>
             </fieldset>
 
@@ -69,14 +68,12 @@
                 </div>
 
                 <div class="date-invite">
-                  <div class="start">
+                  <div class="start" data-error="Error message">
                     <input type="datetime-local" id="start" required />
-                    <div class="error"></div>
                   </div>
 
-                  <div class="end">
+                  <div class="end" data-error="Error message">
                     <input type="datetime-local" id="end" required />
-                    <div class="error"></div>
                   </div>
                 </div>
               </div>
@@ -108,7 +105,7 @@
                 </div>
 
                 <div class="text-input">
-                  <div class="text">
+                  <div class="text" data-error="Error message">
                     <input
                       class="input-local"
                       type="text"
@@ -117,7 +114,6 @@
                       placeholder="Link ou endereço"
                       required
                     />
-                    <div class="error"></div>
                   </div>
                 </div>
               </div>
@@ -127,7 +123,7 @@
               <div class="labels">
                 <label for="description">Descrição</label>
               </div>
-              <div class="droparea">
+              <div class="droparea" data-error="Error message">
                 <textarea
                   name="description"
                   id="description"
@@ -136,7 +132,6 @@
                   placeholder="Escreva sobre os detalhes do evento"
                   required
                 ></textarea>
-                <div class="error"></div>
               </div>
             </fieldset>
 
@@ -249,17 +244,19 @@
 
                 <div class="upadete">
                   <label for="photo">Foto de capa</label>
-
-                  <div class="input-wrapper-button">
-                    <input
-                      class="photo"
-                      type="file"
-                      name="file"
-                      id="photo"
-                      required
-                    />
-                    <div class="error"></div>
-                  </div>
+                  <div
+                    class="input-wrapper-button"
+                    data-error="Error message"
+                  ></div>
+                  <span class="icon-upload"></span>
+                  <span class="text-upload"></span>
+                  <input
+                    class="photo"
+                    type="file"
+                    name="file"
+                    id="photo"
+                    required
+                  />
                 </div>
               </div>
             </fieldset>
@@ -281,7 +278,7 @@
                   <div class="labels">
                     <label for="name">Nome</label>
                   </div>
-                  <div class="contact-name-wrapper">
+                  <div class="contact-name-wrapper" data-error="Error message">
                     <input
                       type="text"
                       id="name"
@@ -289,7 +286,6 @@
                       class="input-name"
                       required
                     />
-                    <div class="error"></div>
                   </div>
                 </div>
 
@@ -299,7 +295,7 @@
                 </div>
 
                 <div class="contact-data-wrapper">
-                  <div class="email">
+                  <div class="email" data-error="Error message">
                     <input
                       type="email"
                       id="email"
@@ -307,10 +303,9 @@
                       class="input-email"
                       required
                     />
-                    <div class="error"></div>
                   </div>
 
-                  <div class="phone">
+                  <div class="phone" data-error="Error message">
                     <input
                       type="tel"
                       id="phone"
@@ -318,7 +313,6 @@
                       class="input-fone"
                       required
                     />
-                    <div class="error"></div>
                   </div>
                 </div>
                 <div class="bottom-border"></div>

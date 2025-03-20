@@ -15,6 +15,7 @@ textarea {
   color: var(--input-placeholder);
   box-sizing: border-box;
 
+  background-color: rgba(0, 0, 0, 0.1);
   border: 1px solid var(--input-stroke);
   border-radius: 0.5rem;
 }
@@ -39,23 +40,19 @@ textarea {
   height: 8.5rem;
 }
 
-input,
-textarea {
-  background-color: rgba(0, 0, 0, 0.1);
-
-  &[required] + .error {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-
+/* input:required,
+textarea:required {
+  
+  &:valid + .error {
+    display: none;
+  }
+  
+  &:invalid + data-error {
     font: var(--body-md);
     color: var(--danger);
   }
 
-  &:valid + .error {
-    display: none;
-  }
-}
+} */
 
 input[type="datetime-local"] {
   position: relative;
@@ -68,4 +65,3 @@ input[type="datetime-local"] {
     opacity: 0;
   }
 }
-

@@ -122,9 +122,7 @@ fieldset {
         text-transform: uppercase;
         padding-left: 1rem;
       }
-      
     }
-    border: 1px solid red;
 
     & .end {
       position: relative;
@@ -499,64 +497,58 @@ fieldset {
     width: 100%;
 
     & .input-wrapper-button {
-      display: flex;
-      align-items: center;
-
+      position: absolute;
       width: 7.5rem;
       height: 3rem;
-
-      background-color: var(--shape-button);
+      background: var(--shape-button);
       border-radius: 0.5rem;
+    }
 
-      & input {
-        position: absolute;
-        display: flex;
-        gap: 1rem;
-        background: none;
-        border: none;
-
-        user-select: none;
-
-        &::-webkit-file-upload-button {
-          position: relative;
-
-          width: 7.5rem;
-          height: 3rem;
-          background-color: transparent;
-          border: none;
-          border-radius: 0.5rem;
-          color: transparent;
-
-          margin-right: 1rem;
-
-          user-select: none;
-          z-index: 2;
-        }
-      }
+    &,
+    & icon-upload {
+      cursor: pointer;
 
       &::before {
         content: url(../assets/icon/Upload.svg);
-
         position: absolute;
+        top: 5.2rem;
         left: 0.75rem;
+        z-index: 2;
+        user-select: none;
       }
+    }
+
+    & .text-upload {
+      cursor: pointer;
 
       &::after {
         content: "Selecionar";
         position: absolute;
+        top: 5.1rem;
         left: 2.25rem;
-
-        width: 24px;
-        height: 24px;
-
+        height: min-content;
         font: var(--body-sm);
         color: var(--text-heading);
+        user-select: none;
       }
+    }
 
-      & .error {
-        position: absolute;
-        bottom: -140px;
-      }
+    & input[type="file"] {
+      position: relative;
+      background: none;
+      top: 0.625rem;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+    }
+
+    & input[type="file"]::file-selector-button {
+      background: none;
+      color: transparent;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+      border-radius: 0.5rem;
     }
   }
 }
@@ -569,8 +561,8 @@ fieldset {
   & .input-name-wrapper {
     position: relative;
     width: 100%;
-    
-    & .contact-name-wrapper{
+
+    & .contact-name-wrapper {
       position: relative;
       width: 100%;
 
@@ -578,12 +570,12 @@ fieldset {
         /* position: relative; */
         width: 100%;
         padding-left: 1rem;
-  
+
         &::placeholder {
           color: var(--input-placeholder);
         }
       }
-    }    
+    }
   }
 
   & .contact-data-wrapper {
@@ -731,4 +723,32 @@ fieldset {
       }
     }
   }
+}
+
+div[data-error] {
+  position: relative;
+  width: 100%;
+  /* height: 3rem; */
+  /* border: 1px solid yellow; */
+
+  &[data-error]::before {
+    content: url(../../assets/icon/Circle-alert.svg);
+    position: absolute;
+    bottom: -24px;
+  }
+
+  &[data-error]::after {
+    content: attr(data-error);
+    position: absolute;
+    bottom: -1.24rem;
+    left: 1.25rem;
+
+    font: var(--body-md);
+    color: var(--danger);
+  }
+}
+
+input[required]:invalid,
+textarea:invalid {
+  border: 1px solid var(--danger);
 }
